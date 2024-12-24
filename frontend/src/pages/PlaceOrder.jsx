@@ -2,8 +2,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets";
+import CartTotal from "../components/CartTotal";
 import Title from "../components/Title";
-import CartTotal from "../components/cartTotal";
 import { ShopContext } from "../context/ShopContext";
 
 const PlaceOrder = () => {
