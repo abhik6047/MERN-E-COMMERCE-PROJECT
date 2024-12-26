@@ -5,7 +5,7 @@ const Navbar = ({ setToken }) => {
 		<div className="flex items-center py-2 px-[4%] justify-between">
 			<img
 				src={assets.logo}
-				alt="forever-admin-panel logo"
+				alt="fashionNest-admin-panel logo"
 				className="w-[max(10%,80px)]"
 			/>
 			<button

@@ -2,7 +2,7 @@ import { assets } from "../assets/assets";
 
 const Hero = () => {
 	return (
-		<div className="flex flex-col sm:flex-row border border-gray-400">
+		<div className="flex flex-col sm:flex-row border border-gray-400 ">
 			{/* Hero Left Side */}
 
 			<div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
@@ -12,7 +12,8 @@ const Hero = () => {
 						<p className="font-medium text-sm md:text-base">OUR BEST SELLER</p>
 					</div>
 					<h1 className="text-3xl sm:py-3 lg:text-5xl leading-relaxed prata-regular">
-						Latest Arrivals
+						<span className="text-[#7091E6] prata-regular">Latest </span>
+						Arrivals
 					</h1>
 					<div className="flex items-center gap-2">
 						<p className="font-semibold text-sm md:text-base">SHOP NOW</p>
@@ -22,7 +23,7 @@ const Hero = () => {
 			</div>
 
 			{/* Hero Right Side */}
-			<img src={assets.hero_img} className="w-full sm:w-1/2" alt="" />
+			<img src={assets.hero_img2} className="w-full sm:w-1/2" alt="" />
 		</div>
 	);
 };

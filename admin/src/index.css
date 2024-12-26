@@ -8,14 +8,14 @@
 }
 
 .active {
-	background-color: #ffebf5;
-	border-color: #c586a5;
+	background-color: #ede8f5;
+	border-color: #3d52a0;
 }
 
 select,
 input,
 textArea {
-	border: 1px solid #c2c2c2;
-	outline-color: #c586a5;
+	border: 1px solid #3d52a0;
+	outline-color: #adbbda;
 	border-radius: 4px;
 }

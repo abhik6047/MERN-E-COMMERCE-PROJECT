@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
 	const [visible, setVisible] = useState(false);
+	const location = useLocation();
 	const {
 		setShowSearch,
 		getCartCount,
@@ -24,7 +25,7 @@ const Navbar = () => {
 	return (
 		<div className="flex items-center justify-between py-5 font-medium">
 			<Link to="/">
-				<img src={assets.logo} alt="logo" className="w-36" />
+				<img src={assets.logo} alt="logo" className="w-40" />
 			</Link>
 
 			<ul className="hidden sm:flex gap-5 text-sm text-gray-700">
@@ -44,15 +45,25 @@ const Navbar = () => {
 					<p>CONTACT</p>
 					<hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
 				</NavLink>
+				{/* <NavLink
+					className="flex flex-col items-center gap-1 border rounded-md p-2"
+					to="https://mern-e-commerce-project-admin.vercel.app/"
+					target="_blank"
+				>
+					<p>ADMIN PANEL</p>
+					<hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+				</NavLink> */}
 			</ul>
 
 			<div className="flex items-center gap-6">
-				<img
-					src={assets.search_icon}
-					alt="Search icon"
-					className="w-5 cursor-pointer"
-					onClick={() => setShowSearch(true)}
-				/>
+				{location.pathname === "/collection" && (
+					<img
+						src={assets.search_icon}
+						alt="Search icon"
+						className="w-5 cursor-pointer"
+						onClick={() => setShowSearch(true)}
+					/>
+				)}
 				<div className="group relative">
 					<img
 						src={assets.profile_icon}
@@ -78,9 +89,10 @@ const Navbar = () => {
 						</div>
 					) : null}
 				</div>
+
 				<Link to="/cart" className="relative">
 					<img src={assets.cart_icon} alt="Cart icon" className="w-5 min-w-5" />
-					<p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+					<p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-[#7091E6] text-white aspect-square rounded-full text-[8px]">
 						{getCartCount()}
 					</p>
 				</Link>
@@ -90,6 +102,17 @@ const Navbar = () => {
 					className="w-5 cursor-pointer sm:hidden"
 					onClick={() => setVisible(true)}
 				/>
+
+				<div>
+					<NavLink
+						className="flex flex-col items-center gap-1 border rounded-full px-5 py-1 text-sm"
+						to="https://mern-e-commerce-project-admin.vercel.app/"
+						target="_blank"
+					>
+						<p>ADMIN</p>
+						<hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+					</NavLink>
+				</div>
 			</div>
 
 			{/* Sidebar menu for small screens */}

@@ -22,15 +22,15 @@ const Contact = () => {
 					</p>
 					<p className="text-gray-500">
 						Tel : +123 2536 98740 <br />
-						Email: admin@forever@gmail.com
+						Email: admin@fashionnest@gmail.com
 					</p>
 					<p className="font-semibold text-xl text-gray-600">
-						Careers at Forver
+						Careers at FashionNest
 					</p>
 					<p className="text-gray-500">
 						Learn more about our teams and job openings.
 					</p>
-					<button className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500">
+					<button className="border border-black px-8 py-4 text-sm hover:bg-[#7091E6] hover:text-white transition-all duration-500">
 						Explore Jobs
 					</button>
 				</div>

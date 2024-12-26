@@ -9,6 +9,11 @@ const Login = () => {
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
+	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+	const togglePasswordVisibility = () => {
+		setIsPasswordVisible((prevState) => !prevState);
+	};
 
 	const onSubmitHandler = async (e) => {
 		e.preventDefault();
@@ -87,17 +92,25 @@ const Login = () => {
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
 			/>
-			<input
-				type="password"
-				className="w-full px-3 py-2 border border-gray-800"
-				placeholder="Password"
-				required
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-			/>
+			<div className="relative w-full">
+				<input
+					type={isPasswordVisible ? "text" : "password"}
+					className="w-full px-3 py-2 border border-gray-800"
+					placeholder="Password"
+					required
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+
+				<span
+					onClick={togglePasswordVisibility}
+					className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl"
+				>
+					{isPasswordVisible ? "🙈" : "👁️"}
+				</span>
+			</div>
 
 			<div className="w-full flex justify-between text-sm mt-[-8px]">
-				<p className="cursor-pointer">Forgot your password?</p>
 				{currentState === "Login" ? (
 					<p
 						className="cursor-pointer"
@@ -115,7 +128,7 @@ const Login = () => {
 				)}
 			</div>
 
-			<button className="bg-black text-white font-light px-8 py-2 mt-4">
+			<button className="bg-[#7091E6] text-white font-light px-8 py-2 mt-4">
 				{currentState === "Login" ? "Login" : "Sign Up"}
 			</button>
 		</form>

@@ -77,7 +77,10 @@ const List = () => {
 						</p>
 						<p
 							className="text-right md:text-center cursor-pointer text-lg"
-							onClick={() => removeProduct(item._id)}
+							onClick={() => {
+								toast.error("This feature is not available in demo.");
+								// removeProduct(item._id)
+							}}
 						>
 							X
 						</p>
