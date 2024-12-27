@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 import { backendURL } from "../App";
 
 const Login = ({ setToken }) => {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("admin@ecommerce.com");
+	const [password, setPassword] = useState("Qwerty@123");
 
 	const onSubmitHandler = async (e) => {
 		e.preventDefault();
