@@ -42,7 +42,7 @@ const ShopContextProvider = (props) => {
 			);
 
 			if (response.data.success) {
-				setCartItems(response.data.cartData);
+				setCartItems(response?.data?.cartData);
 			} else {
 				toast.error(response.data.message);
 			}
